@@ -1,0 +1,206 @@
+/*
+Theme Name: Powerlift Child
+Theme URI: https://powerlift.qodeinteractive.com
+Description: A child theme of Powerlift Theme
+Author: Mikado Themes
+Author URI: http://themeforest.net/user/mikado-themes
+Version: 1.0.0
+Text Domain: powerlift
+Template: powerlift
+*/
+
+#mkdf-back-to-top {
+	display: none !important;
+}
+
+.customer-jouney-column {
+    transform: skewX(-5deg);
+}
+
+.customer-jouney-column > .elementor-widget-mkdf_video_button {
+    transform: skewX(5deg);
+}
+
+article.mkdf-pl-item .mkdf-pli-image-background {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: .5s cubic-bezier(.51, .37, .15, .88);
+}
+
+article.mkdf-pl-item:hover .mkdf-pli-image-background {
+	transform: translate3d(70px, 70px, 0);
+}
+
+.reviews-section .elementor-swiper-button.elementor-swiper-button-prev {
+	left: -10px !important;
+}
+
+.reviews-section .elementor-swiper-button.elementor-swiper-button-next {
+	right: -10px !important;
+}
+
+.mkdf-flow-exp-inner,
+.mkdf-flow-exp-inner * {
+	box-sizing: border-box;
+}
+
+.mkdf-flow-exp-inner {
+	position: relative;
+	z-index: 2;
+	width: min(1180px, 100%);
+	margin: 0 auto;
+	color: #5a382d;
+	font-family: inherit;
+}
+
+.mkdf-flow-exp-inner .flw-exp__head {
+	max-width: 720px;
+	margin: 0 auto 54px;
+	text-align: center;
+}
+
+.mkdf-flow-exp-inner .flw-exp__eyebrow {
+	display: inline-block;
+	margin-bottom: 12px;
+	color: #a4513d;
+	font-family: "Montserrat", sans-serif;
+	font-size: 13px;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.mkdf-flow-exp-inner .flw-exp__head h2 {
+	margin: 0;
+	font-size: clamp(30px, 4vw, 54px);
+	font-weight: 900;
+}
+
+.mkdf-flow-exp-inner .flw-exp__head p {
+	max-width: 620px;
+	margin: 18px auto 0;
+	font-size: 15px;
+	line-height: 1.75;
+	color: rgba(90, 56, 45, 0.78);
+}
+
+.mkdf-flow-exp-inner .flw-exp__grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 22px;
+}
+
+.mkdf-flow-exp-inner .flw-exp__card {
+	position: relative;
+	min-height: 320px;
+	padding: 34px 28px 30px;
+	background: rgba(247, 231, 211, 0.72);
+	border: 1px solid rgba(164, 81, 61, 0.22);
+	border-radius: 2px;
+	box-shadow: 0 18px 40px rgba(93, 54, 36, 0.08);
+	overflow: hidden;
+	transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+
+.mkdf-flow-exp-inner .flw-exp__card:hover {
+	transform: translateY(-6px);
+	background: rgba(250, 236, 218, 0.9);
+	box-shadow: 0 24px 54px rgba(93, 54, 36, 0.14);
+}
+
+.mkdf-flow-exp-inner .flw-exp__number {
+	position: absolute;
+	right: 18px;
+	top: 12px;
+	font-size: 64px;
+	line-height: 1;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke: 1px rgba(164, 81, 61, 0.22);
+	pointer-events: none;
+}
+
+.mkdf-flow-exp-inner .flw-exp__icon {
+	width: 54px;
+	height: 54px;
+	display: grid;
+	place-items: center;
+	margin-bottom: 34px;
+	background: #a4513d;
+	color: #f3dfc7;
+}
+
+.mkdf-flow-exp-inner .flw-exp__icon svg {
+	width: 28px;
+	height: 28px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.mkdf-flow-exp-inner .flw-exp__label {
+	display: block;
+	margin: 0 0 8px;
+	color: #a4513d;
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.mkdf-flow-exp-inner .flw-exp__card h3 {
+	min-height: 72px;
+	margin: 0 0 18px;
+	color: #5a382d;
+	font-size: 27px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.mkdf-flow-exp-inner .flw-exp__card p {
+	margin: 0;
+	color: rgba(90, 56, 45, 0.76);
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+@media only screen and (max-width: 1024px) {
+	.mkdf-flow-exp-inner .flw-exp__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.mkdf-flow-exp-inner .flw-exp__head {
+		text-align: left;
+		margin-bottom: 34px;
+	}
+
+	.mkdf-flow-exp-inner .flw-exp__head p {
+		margin-left: 0;
+	}
+
+	.mkdf-flow-exp-inner .flw-exp__grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.mkdf-flow-exp-inner .flw-exp__card {
+		min-height: auto;
+		padding: 28px 24px;
+	}
+
+	.mkdf-flow-exp-inner .flw-exp__card h3 {
+		min-height: auto;
+		font-size: 24px;
+	}
+
+	.mkdf-flow-exp-inner .flw-exp__icon {
+		margin-bottom: 28px;
+	}
+}
