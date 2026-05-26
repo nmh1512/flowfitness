@@ -6,6 +6,7 @@ if ( ! function_exists( 'powerlift_mikado_child_theme_enqueue_scripts' ) ) {
         $parent_style = 'powerlift-mikado-default-style';
         
         wp_enqueue_style( 'powerlift-mikado-child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ) );
+        wp_enqueue_style( 'powerlift-child-flaticon', get_stylesheet_directory_uri() . '/assets/css/flaticon.css', array( 'powerlift-mikado-child-style' ) );
     }
     
     add_action( 'wp_enqueue_scripts', 'powerlift_mikado_child_theme_enqueue_scripts' );
@@ -115,3 +116,5 @@ function flow_fitness_custom_services( $atts ) {
 add_shortcode( 'flow_fitness_custom_services_shortcode', 'flow_fitness_custom_services' );
 
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-experience.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/flow-confidence.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/flow-why-choose.php';
