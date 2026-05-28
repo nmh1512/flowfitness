@@ -115,8 +115,17 @@ function flow_fitness_custom_services( $atts ) {
 
 add_shortcode( 'flow_fitness_custom_services_shortcode', 'flow_fitness_custom_services' );
 
+if ( ! function_exists( 'flow_fitness_register_elementor_widgets' ) ) {
+    function flow_fitness_register_elementor_widgets() {
+        require_once get_stylesheet_directory() . '/inc/elementor/flow-faq.php';
+    }
+
+    add_action( 'elementor/widgets/register', 'flow_fitness_register_elementor_widgets' );
+}
+
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-experience.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-confidence.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-why-choose.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-rehab-reviews.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-diagnostic-check.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/flow-diagonal-features.php';
