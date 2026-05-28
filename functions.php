@@ -118,3 +118,5 @@ add_shortcode( 'flow_fitness_custom_services_shortcode', 'flow_fitness_custom_se
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-experience.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-confidence.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-why-choose.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/flow-rehab-reviews.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/flow-diagnostic-check.php';
