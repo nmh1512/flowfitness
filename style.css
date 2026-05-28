@@ -588,3 +588,603 @@ article.mkdf-pl-item:hover .mkdf-pli-image-background {
 		font-size: 22px;
 	}
 }
+
+
+/* --- REHAB REVIEWS UI RESTRUCTURE --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+	--flow-rehab-bg-beige: #F7EBD6;
+	--flow-rehab-terracotta: #A55646;
+	--flow-rehab-ink: #3D2A10;
+	--flow-rehab-white: #FFFFFF;
+	--flow-rehab-glass: rgba(255, 255, 255, 0.7);
+	--flow-rehab-border: rgba(165, 86, 70, 0.15);
+}
+
+.flow-rehab-reviews-wrapper {
+	background-color: var(--flow-rehab-bg-beige);
+	font-family: 'Montserrat', sans-serif;
+	color: var(--flow-rehab-ink);
+	line-height: 1.6;
+	overflow-x: hidden;
+	position: relative;
+}
+
+.flow-rehab-reviews-wrapper .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 80px 24px;
+	position: relative;
+	z-index: 2;
+}
+
+/* --- REVEAL ANIMATIONS --- */
+.flow-rehab-reviews-wrapper .reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.flow-rehab-reviews-wrapper .reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* --- HEADER --- */
+.flow-rehab-reviews-wrapper .header {
+	text-align: center;
+	margin-bottom: 60px;
+	position: relative;
+}
+
+.flow-rehab-reviews-wrapper .vertical-tag {
+	position: absolute;
+	left: -40px;
+	top: 0;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	font-size: 11px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: var(--flow-rehab-terracotta);
+	opacity: 0.6;
+	font-weight: 600;
+}
+
+.flow-rehab-reviews-wrapper .header h1 {
+	font-family: 'Cormorant Garamond', serif !important;
+	font-size: clamp(36px, 5vw, 54px);
+	font-weight: 300;
+	line-height: 1.1;
+	color: var(--flow-rehab-ink);
+	margin: 0;
+}
+
+.flow-rehab-reviews-wrapper .header h1 em {
+	font-style: italic;
+	color: var(--flow-rehab-terracotta);
+}
+
+/* --- ASSESSMENT HIGHLIGHT BOX --- */
+.flow-rehab-reviews-wrapper .assessment-box {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	gap: 0;
+	background: var(--flow-rehab-white);
+	border-radius: 0;
+	overflow: visible;
+	position: relative;
+	margin-bottom: 120px;
+	border: 1px solid var(--flow-rehab-terracotta);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flow-rehab-reviews-wrapper .assessment-box:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 15px 40px rgba(165, 86, 70, 0.1);
+}
+
+@media (max-width: 900px) {
+	.flow-rehab-reviews-wrapper .assessment-box {
+		grid-template-columns: 1fr;
+	}
+}
+
+.flow-rehab-reviews-wrapper .assessment-image {
+	position: relative;
+	min-height: 500px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Glassmorphism Floating Labels */
+.flow-rehab-reviews-wrapper .data-tag {
+	position: absolute;
+	background: var(--flow-rehab-glass);
+	backdrop-filter: blur(10px);
+	padding: 12px 20px;
+	border-radius: 0;
+	border: 1px solid var(--flow-rehab-terracotta);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--flow-rehab-terracotta);
+	animation: flowFloat 4s ease-in-out infinite;
+}
+
+.flow-rehab-reviews-wrapper .tag-1 {
+	top: 20%;
+	right: 10%;
+	animation-delay: 0s;
+}
+
+.flow-rehab-reviews-wrapper .tag-2 {
+	bottom: 25%;
+	left: 10%;
+	animation-delay: 1s;
+}
+
+@keyframes flowFloat {
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+.flow-rehab-reviews-wrapper .assessment-content {
+	padding: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.flow-rehab-reviews-wrapper .assessment-content .label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 600;
+	color: var(--flow-rehab-terracotta);
+	margin-bottom: 16px;
+	display: block;
+}
+
+.flow-rehab-reviews-wrapper .assessment-content h2 {
+	font-family: 'Cormorant Garamond', serif !important;
+	font-size: 42px;
+	font-weight: 400;
+	line-height: 1.2;
+	margin-bottom: 24px;
+	color: var(--flow-rehab-ink);
+}
+
+.flow-rehab-reviews-wrapper .assessment-content h2 em {
+	font-style: italic;
+	color: var(--flow-rehab-terracotta);
+}
+
+.flow-rehab-reviews-wrapper .assessment-content p {
+	font-size: 15px;
+	font-weight: 300;
+	margin-bottom: 32px;
+	color: rgba(61, 42, 16, 0.7);
+}
+
+.flow-rehab-reviews-wrapper .btn-outline {
+	display: inline-block;
+	padding: 16px 32px;
+	border: 1px solid var(--flow-rehab-terracotta);
+	color: var(--flow-rehab-terracotta);
+	text-decoration: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	border-radius: 0;
+	transition: all 0.3s ease;
+	position: relative;
+	background: transparent;
+	transform-style: preserve-3d;
+}
+
+.flow-rehab-reviews-wrapper .btn-outline::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	transform: translate(6px, 6px) translateZ(-1px);
+	border: 1px solid var(--flow-rehab-terracotta);
+	z-index: -1;
+	transition: transform 0.2s;
+}
+
+.flow-rehab-reviews-wrapper .btn-outline:hover {
+	background-color: var(--flow-rehab-terracotta);
+	color: var(--flow-rehab-white);
+	transform: translate(2px, 2px);
+}
+
+.flow-rehab-reviews-wrapper .btn-outline:hover::after {
+	transform: translate(-6px, -6px) translateZ(-1px);
+}
+
+/* --- SWIPER OVERRIDES --- */
+.slider-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.flow-rehab-swiper {
+	padding: 20px 0 60px !important;
+	overflow: hidden !important;
+	/* Fixed overflow to balance slider slides */
+}
+
+/* Position arrows relative to slider-wrapper */
+.slider-wrapper .swiper-button-next,
+.slider-wrapper .swiper-button-prev {
+	color: var(--flow-rehab-terracotta);
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	z-index: 10;
+}
+
+.slider-wrapper .swiper-button-next {
+	right: -50px;
+}
+
+.slider-wrapper .swiper-button-prev {
+	left: -50px;
+}
+
+@media (max-width: 1300px) {
+	.slider-wrapper .swiper-button-next {
+		right: 0;
+	}
+
+	.slider-wrapper .swiper-button-prev {
+		left: 0;
+	}
+}
+
+.flow-rehab-swiper .swiper-pagination-bullet-active {
+	background: var(--flow-rehab-terracotta);
+}
+
+/* --- HORIZONTAL TESTIMONIAL CARD --- */
+.flow-rehab-reviews-wrapper .testi-card {
+	background: var(--flow-rehab-white);
+	border: 1px solid var(--flow-rehab-terracotta);
+	position: relative;
+	height: 100%;
+}
+
+.flow-rehab-reviews-wrapper .testi-card.horizontal {
+	display: flex;
+	flex-direction: row;
+	min-height: 380px;
+}
+
+.flow-rehab-reviews-wrapper .featured-img {
+	flex: 0 0 40%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-right: 1px solid var(--flow-rehab-terracotta);
+}
+
+.flow-rehab-reviews-wrapper .featured-body {
+	flex: 1;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.flow-rehab-reviews-wrapper .quote-icon {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 50px;
+	color: var(--flow-rehab-terracotta);
+	opacity: 0.15;
+	line-height: 0;
+	margin-bottom: 24px;
+}
+
+.flow-rehab-reviews-wrapper .testi-text {
+	font-size: 16px;
+	font-weight: 300;
+	font-style: italic;
+	margin-bottom: 24px;
+	color: var(--flow-rehab-ink);
+	line-height: 1.6;
+}
+
+.flow-rehab-reviews-wrapper .testi-author {
+	border-top: 1px solid rgba(165, 86, 70, 0.15);
+	padding-top: 24px;
+}
+
+.flow-rehab-reviews-wrapper .author-info h4 {
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--flow-rehab-ink);
+	margin: 0 0 4px;
+}
+
+.flow-rehab-reviews-wrapper .author-info span {
+	font-size: 12px;
+	color: var(--flow-rehab-terracotta);
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+	.flow-rehab-reviews-wrapper .testi-card.horizontal {
+		flex-direction: column;
+		min-height: auto;
+	}
+
+	.flow-rehab-reviews-wrapper .featured-img {
+		height: 350px;
+		flex: none;
+		border-right: 0;
+		border-bottom: 1px solid var(--flow-rehab-terracotta);
+	}
+
+	.flow-rehab-reviews-wrapper .featured-body {
+		padding: 40px;
+	}
+}
+
+/* --- CTA CARD --- */
+.flow-rehab-reviews-wrapper .cta-card .testi-text {
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+
+/* --- DECORATIVE --- */
+.flow-rehab-reviews-wrapper .circle-blur {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: var(--flow-rehab-terracotta);
+	filter: blur(150px);
+	opacity: 0.04;
+	z-index: 1;
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+/* --- DIAGNOSTIC CHECK SHORTCODE --- */
+.flow-diagnostic-wrapper {
+	background-color: var(--flow-rehab-bg-beige);
+	font-family: 'Montserrat', sans-serif;
+	color: var(--flow-rehab-ink);
+	padding: 80px 24px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.flow-diagnostic-wrapper .container {
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+
+.flow-diagnostic-wrapper .header {
+	text-align: center;
+	margin-bottom: 60px;
+	position: relative;
+}
+
+.flow-diagnostic-wrapper .vertical-tag {
+	position: absolute;
+	left: -40px;
+	top: 0;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	font-size: 11px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: var(--flow-rehab-terracotta);
+	opacity: 0.6;
+	font-weight: 600;
+}
+
+.flow-diagnostic-wrapper .header h1 {
+	font-family: 'Cormorant Garamond', serif !important;
+	font-size: clamp(32px, 5vw, 48px);
+	font-weight: 300;
+	line-height: 1.2;
+	margin: 0;
+	color: var(--flow-rehab-ink);
+}
+
+.flow-diagnostic-wrapper .header h1 em {
+	font-style: italic;
+	color: var(--flow-rehab-terracotta);
+}
+
+.flow-diagnostic-wrapper .insight-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0;
+	border-top: 1px solid var(--flow-rehab-ink);
+	border-left: 1px solid var(--flow-rehab-ink);
+}
+
+.flow-diagnostic-wrapper .insight-card {
+	background: #FFFFFF;
+	border-right: 1px solid var(--flow-rehab-ink);
+	border-bottom: 1px solid var(--flow-rehab-ink);
+	padding: 32px 24px;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	min-height: 180px;
+}
+
+/* Background Colors & Text Colors based on the Image */
+.flow-diagnostic-wrapper .insight-card:nth-child(1) {
+	background: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(2) {
+	background: #EFE4D2;
+}
+
+/* Beige */
+.flow-diagnostic-wrapper .insight-card:nth-child(3) {
+	background: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(4) {
+	background: #111111;
+	color: #FFFFFF !important;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(4) .keyword {
+	color: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(5) {
+	background: #EFE4D2;
+}
+
+/* Beige */
+.flow-diagnostic-wrapper .insight-card:nth-child(6) {
+	background: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(7) {
+	background: var(--flow-rehab-terracotta);
+	color: #FFFFFF !important;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(7) .keyword {
+	color: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(8) {
+	background: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card .keyword {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.4;
+	color: var(--flow-rehab-ink);
+	transition: color 0.3s ease;
+	text-transform: uppercase;
+}
+
+.flow-diagnostic-wrapper .insight-card .icon {
+	color: var(--flow-rehab-terracotta);
+	margin-bottom: 24px;
+	transition: transform 0.3s ease;
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(4) .icon {
+	color: var(--flow-rehab-terracotta);
+}
+
+.flow-diagnostic-wrapper .insight-card:nth-child(7) .icon {
+	color: #FFFFFF;
+}
+
+.flow-diagnostic-wrapper .insight-card:hover {
+	transform: scale(1.02);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	z-index: 10;
+}
+
+.flow-diagnostic-wrapper .insight-card:hover .icon {
+	transform: translateY(-3px);
+}
+
+/* Selected state */
+.flow-diagnostic-wrapper .insight-card.selected {
+	box-shadow: inset 0 0 0 3px var(--flow-rehab-terracotta);
+}
+
+@media (max-width: 900px) {
+	.flow-diagnostic-wrapper .insight-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.flow-diagnostic-wrapper .insight-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.flow-diagnostic-wrapper .insight-card {
+		min-height: auto;
+		padding: 20px;
+	}
+}
+
+.flow-diagnostic-wrapper .action-area {
+	margin-top: 60px;
+	text-align: center;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(20px);
+	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.flow-diagnostic-wrapper .action-area.active {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+.flow-diagnostic-wrapper .flow-diag-btn {
+	display: inline-block;
+	padding: 18px 40px;
+	background: var(--flow-rehab-terracotta);
+	color: var(--flow-rehab-white);
+	text-decoration: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	position: relative;
+	transition: all 0.3s ease;
+	transform-style: preserve-3d;
+	border: 1px solid var(--flow-rehab-terracotta);
+}
+
+.flow-diagnostic-wrapper .flow-diag-btn::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	transform: translate(6px, 6px) translateZ(-1px);
+	border: 1px solid var(--flow-rehab-terracotta);
+	transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.flow-diagnostic-wrapper .flow-diag-btn:hover {
+	transform: translate(2px, 2px);
+	background: #8e4538;
+}
+
+.flow-diagnostic-wrapper .flow-diag-btn:hover::after {
+	transform: translate(-6px, -6px) translateZ(-1px);
+}
