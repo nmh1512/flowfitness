@@ -1022,14 +1022,14 @@ article.mkdf-pl-item:hover .mkdf-pli-image-background {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 0;
-	border-top: 1px solid var(--flow-rehab-ink);
-	border-left: 1px solid var(--flow-rehab-ink);
+	/* border-top: 1px solid var(--flow-rehab-ink);
+	border-left: 1px solid var(--flow-rehab-ink); */
 }
 
 .flow-diagnostic-wrapper .insight-card {
 	background: #FFFFFF;
-	border-right: 1px solid var(--flow-rehab-ink);
-	border-bottom: 1px solid var(--flow-rehab-ink);
+	/* border-right: 1px solid var(--flow-rehab-ink);
+	border-bottom: 1px solid var(--flow-rehab-ink); */
 	padding: 32px 24px;
 	cursor: pointer;
 	position: relative;

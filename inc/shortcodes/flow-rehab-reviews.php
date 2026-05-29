@@ -10,7 +10,8 @@ if (!function_exists('flow_fitness_rehab_reviews_shortcode')) {
                 'assessment_label' => 'Scientific Wellness',
                 'assessment_title' => 'Khoa học trong từng<br><em>chuyển động</em>',
                 'assessment_text' => 'Mọi lộ trình tại Flow đều bắt đầu bằng việc lắng nghe cơ thể qua các bài kiểm tra chức năng chuyên sâu. Coach và khách hàng sẽ cùng nhau tìm ra nút thắt để giải quyết triệt để vấn đề.',
-                'assessment_img' => get_stylesheet_directory_uri() . '/assets/rehab_hero.png',
+//                 'assessment_img' => get_stylesheet_directory_uri() . '/assets/rehab_hero.png',
+                'assessment_img' => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/IMG_7725-1024x683.jpg',
                 'btn_text' => 'Tư vấn lộ trình riêng',
                 'btn_url' => '#',
             ),
@@ -21,19 +22,22 @@ if (!function_exists('flow_fitness_rehab_reviews_shortcode')) {
         // Define testimonials data (matching the second image horizontal layout style)
         $testimonials = array(
             array(
-                'image'  => get_stylesheet_directory_uri() . '/assets/client_1.png',
+//                 'image'  => get_stylesheet_directory_uri() . '/assets/client_1.png',
+                'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/z7239650420874_1b120516b302424ba592ab09e652bc59.jpg',
                 'quote'  => 'Sau 3 tháng kiên trì Rehab cùng Coach, những cơn đau lưng kinh niên của mình đã biến mất hoàn toàn. Không chỉ là tập luyện, đó là sự thấu hiểu cơ thể.',
-                'name'   => 'Huyền Trâm',
+                'name'   => 'Tuấn Trần',
                 'role'   => 'Content Creator'
             ),
             array(
-                'image'  => get_stylesheet_directory_uri() . '/assets/client_2.png',
+//                 'image'  => get_stylesheet_directory_uri() . '/assets/client_2.png',
+                'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2019/06/z7232511089461_02df7ae4e16b4cdce48259a20298ba3b.jpg',
                 'quote'  => 'Kho dịch vụ chuyên sâu, không gian yên tĩnh và đội ngũ chuyên môn cực kỳ cao. Rất đáng trải nghiệm.',
-                'name'   => 'Minh Hoàng',
+                'name'   => 'Alans',
                 'role'   => 'Software Engineer'
             ),
             array(
-                'image'  => get_stylesheet_directory_uri() . '/assets/rehab_hero.png', // Fallback image if there's only 2
+//                 'image'  => get_stylesheet_directory_uri() . '/assets/rehab_hero.png',
+                'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/IMG_7474-1024x683.jpg', 
                 'quote'  => 'Flow giúp mình lấy lại sự tự tin sau chấn thương thể thao. Các bài test chức năng hàng tuần giúp mình thấy rõ tiến bộ.',
                 'name'   => 'Quốc Anh',
                 'role'   => 'Vận động viên'
@@ -65,8 +69,8 @@ if (!function_exists('flow_fitness_rehab_reviews_shortcode')) {
                 <section class="assessment-box reveal reveal-left">
                     <div class="assessment-image"
                         style="background-image: url('<?php echo esc_url($atts['assessment_img']); ?>');">
-                        <div class="data-tag tag-1">Functional Test: 85% Score</div>
-                        <div class="data-tag tag-2">Alignment: Corrected</div>
+<!--                         <div class="data-tag tag-1">Functional Test: 85% Score</div>
+                        <div class="data-tag tag-2">Alignment: Corrected</div> -->
                     </div>
                     <div class="assessment-content">
                         <span class="label">

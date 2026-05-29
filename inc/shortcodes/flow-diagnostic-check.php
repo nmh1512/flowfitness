@@ -52,7 +52,7 @@ if (!function_exists('flow_fitness_diagnostic_check_shortcode')) {
         ob_start();
         ?>
         <div class="flow-diagnostic-wrapper" style="padding-top: 0">
-            <div class="container">
+            <div class="">
                 <header class="header">
                     <span class="vertical-tag">
                         <?php echo esc_html($atts['tag']); ?>
