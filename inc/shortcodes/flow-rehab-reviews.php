@@ -19,30 +19,50 @@ if (!function_exists('flow_fitness_rehab_reviews_shortcode')) {
             'flow_rehab_reviews'
         );
 
-        // Define testimonials data (matching the second image horizontal layout style)
-        $testimonials = array(
-            array(
-//                 'image'  => get_stylesheet_directory_uri() . '/assets/client_1.png',
-                'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/z7239650420874_1b120516b302424ba592ab09e652bc59.jpg',
-                'quote'  => 'Sau 3 tháng kiên trì Rehab cùng Coach, những cơn đau lưng kinh niên của mình đã biến mất hoàn toàn. Không chỉ là tập luyện, đó là sự thấu hiểu cơ thể.',
-                'name'   => 'Tuấn Trần',
-                'role'   => 'Content Creator'
-            ),
-            array(
-//                 'image'  => get_stylesheet_directory_uri() . '/assets/client_2.png',
-                'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2019/06/z7232511089461_02df7ae4e16b4cdce48259a20298ba3b.jpg',
-                'quote'  => 'Kho dịch vụ chuyên sâu, không gian yên tĩnh và đội ngũ chuyên môn cực kỳ cao. Rất đáng trải nghiệm.',
-                'name'   => 'Alans',
-                'role'   => 'Software Engineer'
-            ),
-            array(
-//                 'image'  => get_stylesheet_directory_uri() . '/assets/rehab_hero.png',
-                'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/IMG_7474-1024x683.jpg', 
-                'quote'  => 'Flow giúp mình lấy lại sự tự tin sau chấn thương thể thao. Các bài test chức năng hàng tuần giúp mình thấy rõ tiến bộ.',
-                'name'   => 'Quốc Anh',
-                'role'   => 'Vận động viên'
-            )
-        );
+        // Fetch testimonials from CPT
+        $testimonials = array();
+        $review_query = new WP_Query(array(
+            'post_type'      => 'flow_review',
+            'posts_per_page' => -1,
+            'orderby'        => 'menu_order date',
+            'order'          => 'ASC',
+            'post_status'    => 'publish'
+        ));
+
+        if ($review_query->have_posts()) {
+            while ($review_query->have_posts()) {
+                $review_query->the_post();
+                $testimonials[] = array(
+                    'image' => get_the_post_thumbnail_url(get_the_ID(), 'large'),
+                    'quote' => wp_strip_all_tags(get_the_content()),
+                    'name'  => get_the_title(),
+                    'role'  => get_post_meta(get_the_ID(), '_flow_review_role', true)
+                );
+            }
+            wp_reset_postdata();
+        } else {
+            // Fallback hardcoded data if no posts found yet
+            $testimonials = array(
+                array(
+                    'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/z7239650420874_1b120516b302424ba592ab09e652bc59.jpg',
+                    'quote'  => 'Sau 3 tháng kiên trì Rehab cùng Coach, những cơn đau lưng kinh niên của mình đã biến mất hoàn toàn. Không chỉ là tập luyện, đó là sự thấu hiểu cơ thể.',
+                    'name'   => 'Tuấn Trần',
+                    'role'   => 'Content Creator'
+                ),
+                array(
+                    'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2019/06/z7232511089461_02df7ae4e16b4cdce48259a20298ba3b.jpg',
+                    'quote'  => 'Kho dịch vụ chuyên sâu, không gian yên tĩnh và đội ngũ chuyên môn cực kỳ cao. Rất đáng trải nghiệm.',
+                    'name'   => 'Alans',
+                    'role'   => 'Software Engineer'
+                ),
+                array(
+                    'image'  => 'https://flowfitness.com.vn/wp-content/uploads/2025/11/IMG_7474-1024x683.jpg', 
+                    'quote'  => 'Flow giúp mình lấy lại sự tự tin sau chấn thương thể thao. Các bài test chức năng hàng tuần giúp mình thấy rõ tiến bộ.',
+                    'name'   => 'Quốc Anh',
+                    'role'   => 'Vận động viên'
+                )
+            );
+        }
 
         ob_start();
         ?>

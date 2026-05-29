@@ -129,3 +129,4 @@ require_once get_stylesheet_directory() . '/inc/shortcodes/flow-why-choose.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-rehab-reviews.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-diagnostic-check.php';
 require_once get_stylesheet_directory() . '/inc/shortcodes/flow-diagonal-features.php';
+require_once get_stylesheet_directory() . '/inc/post-types/flow-review-cpt.php';
